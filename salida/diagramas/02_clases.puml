@@ -1,0 +1,49 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+skinparam classAttributeIconSize 0
+
+class Personaje {
+  - nombre : String
+  - nivel : int
+  - ataque_base : int
+  - defensa_base : int
+  + equipar_arma()
+  + equipar_armadura()
+}
+
+class Objeto {
+  - nombre : String
+  - peso : int
+  - marca_protegido : boolean
+  + equipar()
+  + descartar()
+}
+
+class Arma {
+  - bono_ataque : int
+  - nivel_minimo : int
+  + equipar()
+}
+
+class Armadura {
+  - bono_defensa : int
+  - nivel_minimo : int
+  + equipar()
+}
+
+class Inventario {
+  - personaje : int
+  - capacidad_maxima : int
+  - objetos : List
+  + agregar_objeto()
+  + listar_objetos()
+  + filtrar_objetos()
+  + consultar_capacidad_disponible()
+}
+
+Objeto <|-- Arma
+Objeto <|-- Armadura
+Personaje "1" -- "*" Inventario
+Objeto "0..*" -- "1" Arma
+Objeto "0..*" -- "1" Armadura
+@enduml

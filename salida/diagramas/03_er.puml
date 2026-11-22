@@ -1,0 +1,44 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+' La herencia NO se traduce a ER: decidir cómo modelarla (tabla única, por clase...) es trabajo tuyo.
+hide circle
+skinparam linetype ortho
+
+entity Personaje {
+  * nombre : varchar <<PK>>
+  --
+  nivel : int
+  ataque_base : int
+  defensa_base : int
+}
+
+entity Objeto {
+  * nombre : varchar <<PK>>
+  --
+  peso : int
+  marca_protegido : boolean
+}
+
+' Arma hereda de Objeto: decisión de modelado pendiente
+entity Arma {
+  bono_ataque : int
+  nivel_minimo : int
+}
+
+' Armadura hereda de Objeto: decisión de modelado pendiente
+entity Armadura {
+  bono_defensa : int
+  nivel_minimo : int
+}
+
+entity Inventario {
+  * personaje : int <<PK>>
+  --
+  capacidad_maxima : int
+  objetos : json
+}
+
+Personaje ||--o{ Inventario
+Objeto }o--|| Arma
+Objeto }o--|| Armadura
+@enduml

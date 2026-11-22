@@ -1,0 +1,11 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-08 Comparar equipo con objeto nuevo
+actor "Jugador" as P1
+participant "Inventario" as P2
+participant "Armadura" as P3
+participant "Personaje" as P4
+
+P1 -> P2 : Comparar equipo con objeto nuevo: Escudo, bono_defensa=5, nivel_minimo=2
+P3 -> P4 : Defensa total actualizado a 7
+@enduml

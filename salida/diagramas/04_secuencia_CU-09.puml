@@ -1,0 +1,8 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-09 Marcar y desmarcar objeto como protegido
+actor "Jugador" as P1
+participant "Inventario" as P2
+
+P1 -> P2 : Marcar objeto como protegido: Espada, protegido=True
+@enduml

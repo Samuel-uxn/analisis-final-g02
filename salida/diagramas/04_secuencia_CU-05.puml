@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-05 Avisar cuando el inventario está lleno
+actor "Jugador" as P1
+participant "Inventario" as P2
+
+P1 -> P2 : Agregar objeto: Armadura, nombre='Escudo', peso=10, nivel_minimo=2
+P2 -> P1 : Inventario lleno. Libere al menos 5 unidades de peso para agregar el objeto.
+@enduml
