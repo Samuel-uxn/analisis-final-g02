@@ -1,11 +1,9 @@
 @startuml
 ' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
-title CU-07 Equipar arma o armadura
+title CU-07 Comparar armas en el inventario
 actor "Jugador" as P1
 participant "Inventario" as P2
-participant "Arma" as P3
-participant "Personaje" as P4
 
-P1 -> P2 : Equipar arma: Espada, bono_ataque=5, nivel_minimo=2
-P3 -> P4 : Ataque total actualizado a 7
+P1 -> P2 : Comparar armas: {codigo_nuevo, codigo_equipado}
+P2 -> P1 : Bono nuevo: {bono_nuevo}, Bono equipado: {bono_equipado}, Diferencia: {diferencia_bonos}
 @enduml

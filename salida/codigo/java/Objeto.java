@@ -2,29 +2,33 @@
 // NO es una solución: clases y firmas con TODO. Completa la lógica y audita contra la spec.
 package rpgmanager.inventarioyequipamiento;
 
-/** Objeto. Trazabilidad: RN-01, RN-05. */
+/** Objeto. Trazabilidad: RF-06, RF-08, RF-09, RF-10. */
 public class Objeto {
+    private String codigo;
     private String nombre;
     private int peso;
+    private String tipo;
     private boolean marcaProtegido;
-    private Arma arma; // asociacion ()
-    private Armadura armadura; // asociacion ()
+    private boolean marcaEquipado;
 
-    public Objeto(String nombre, int peso, boolean marcaProtegido) {
+    public Objeto(String codigo, String nombre, int peso, String tipo, boolean marcaProtegido, boolean marcaEquipado) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.peso = peso;
+        this.tipo = tipo;
         this.marcaProtegido = marcaProtegido;
+        this.marcaEquipado = marcaEquipado;
     }
 
     // TODO: getters y setters (encapsulamiento)
 
-    /** equipar (RN-02). */
-    public void equipar() {
-        throw new UnsupportedOperationException("TODO: implementar Objeto.equipar");
+    /** marcar_protegido (RF-09, RN-05, RN-07, RN-09, RN-10, RN-11). */
+    public void marcarProtegido() {
+        throw new UnsupportedOperationException("TODO: implementar Objeto.marcar_protegido");
     }
 
-    /** descartar (RN-05). */
-    public void descartar() {
-        throw new UnsupportedOperationException("TODO: implementar Objeto.descartar");
+    /** desmarcar_protegido (RF-09, RN-05, RN-07, RN-09, RN-10, RN-11). */
+    public void desmarcarProtegido() {
+        throw new UnsupportedOperationException("TODO: implementar Objeto.desmarcar_protegido");
     }
 }

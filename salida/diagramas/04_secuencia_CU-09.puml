@@ -1,8 +1,10 @@
 @startuml
 ' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
-title CU-09 Marcar y desmarcar objeto como protegido
+title CU-09 Equipar armadura en el inventario
 actor "Jugador" as P1
 participant "Inventario" as P2
+participant "Personaje" as P3
 
-P1 -> P2 : Marcar objeto como protegido: Espada, protegido=True
+P1 -> P2 : Equipar armadura: {codigo}
+P2 -> P3 : Armadura equipada exitosamente
 @enduml

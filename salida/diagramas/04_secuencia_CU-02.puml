@@ -5,5 +5,5 @@ actor "Jugador" as P1
 participant "Inventario" as P2
 
 P1 -> P2 : Listar objetos
-P2 -> P1 : Objeto: Espada, tipo=Arma, peso=5, equipado=True, protegido=False
+P2 -> P1 : Lista de objetos: [{nombre, tipo, peso, equipado, protegido}]
 @enduml

@@ -5,40 +5,57 @@ hide circle
 skinparam linetype ortho
 
 entity Personaje {
-  * nombre : varchar <<PK>>
+  * codigo : varchar <<PK>>
   --
+  nombre : varchar
   nivel : int
   ataque_base : int
   defensa_base : int
+  ataque_total : int
+  defensa_total : int
+  arma_equipada : varchar
+  armadura_equipada : varchar
+}
+
+entity Inventario {
+  * codigo : varchar <<PK>>
+  --
+  capacidad_maxima : int
+  peso_total : int
+  capacidad_disponible : int
 }
 
 entity Objeto {
-  * nombre : varchar <<PK>>
+  * codigo : varchar <<PK>>
   --
+  nombre : varchar
   peso : int
+  tipo : varchar
   marca_protegido : boolean
+  marca_equipado : boolean
 }
 
-' Arma hereda de Objeto: decisión de modelado pendiente
 entity Arma {
+  * codigo : varchar <<PK>>
+  --
   bono_ataque : int
   nivel_minimo : int
 }
 
-' Armadura hereda de Objeto: decisión de modelado pendiente
 entity Armadura {
+  * codigo : varchar <<PK>>
+  --
   bono_defensa : int
   nivel_minimo : int
 }
 
-entity Inventario {
-  * personaje : int <<PK>>
+entity Otro {
+  * codigo : varchar <<PK>>
   --
-  capacidad_maxima : int
-  objetos : json
+  nombre : varchar
+  peso : int
 }
 
-Personaje ||--o{ Inventario
-Objeto }o--|| Arma
-Objeto }o--|| Armadura
+Personaje ||--o{ Inventario : tiene
+Inventario }o--|| Objeto : contiene
 @enduml

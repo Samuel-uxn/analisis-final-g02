@@ -3,47 +3,61 @@
 skinparam classAttributeIconSize 0
 
 class Personaje {
+  - codigo : String
   - nombre : String
   - nivel : int
   - ataque_base : int
   - defensa_base : int
-  + equipar_arma()
-  + equipar_armadura()
-}
-
-class Objeto {
-  - nombre : String
-  - peso : int
-  - marca_protegido : boolean
-  + equipar()
-  + descartar()
-}
-
-class Arma {
-  - bono_ataque : int
-  - nivel_minimo : int
-  + equipar()
-}
-
-class Armadura {
-  - bono_defensa : int
-  - nivel_minimo : int
-  + equipar()
+  - ataque_total : int
+  - defensa_total : int
+  - arma_equipada : String
+  - armadura_equipada : String
+  + calcular_ataque_total()
+  + calcular_defensa_total()
 }
 
 class Inventario {
-  - personaje : int
+  - codigo : String
   - capacidad_maxima : int
-  - objetos : List
+  - peso_total : int
+  - capacidad_disponible : int
   + agregar_objeto()
   + listar_objetos()
   + filtrar_objetos()
   + consultar_capacidad_disponible()
 }
 
-Objeto <|-- Arma
-Objeto <|-- Armadura
-Personaje "1" -- "*" Inventario
-Objeto "0..*" -- "1" Arma
-Objeto "0..*" -- "1" Armadura
+class Objeto {
+  - codigo : String
+  - nombre : String
+  - peso : int
+  - tipo : String
+  - marca_protegido : boolean
+  - marca_equipado : boolean
+  + marcar_protegido()
+  + desmarcar_protegido()
+}
+
+class Arma {
+  - codigo : String
+  - bono_ataque : int
+  - nivel_minimo : int
+  + equipar()
+}
+
+class Armadura {
+  - codigo : String
+  - bono_defensa : int
+  - nivel_minimo : int
+  + equipar()
+}
+
+class Otro {
+  - codigo : String
+  - nombre : String
+  - peso : int
+}
+
+Personaje "1" -- "*" Inventario : tiene
+Inventario "0..*" -- "1" Objeto : contiene
 @enduml

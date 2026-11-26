@@ -8,12 +8,12 @@ rectangle "Inventario y equipamiento" {
   usecase "CU-01 Agregar objeto al inventario" as CU_01
   usecase "CU-02 Listar objetos del inventario" as CU_02
   usecase "CU-03 Filtrar objetos del inventario" as CU_03
-  usecase "CU-04 Consultar capacidad disponible del inventario" as CU_04
-  usecase "CU-05 Avisar cuando el inventario está lleno" as CU_05
-  usecase "CU-06 Descartar objeto del inventario" as CU_06
-  usecase "CU-07 Equipar arma o armadura" as CU_07
-  usecase "CU-08 Comparar equipo con objeto nuevo" as CU_08
-  usecase "CU-09 Marcar y desmarcar objeto como protegido" as CU_09
+  usecase "CU-04 Consultar capacidad disponible de inventario" as CU_04
+  usecase "CU-05 Descartar objeto del inventario" as CU_05
+  usecase "CU-06 Equipar arma en el inventario" as CU_06
+  usecase "CU-07 Comparar armas en el inventario" as CU_07
+  usecase "CU-08 Marcar objeto como protegido en el inventario" as CU_08
+  usecase "CU-09 Equipar armadura en el inventario" as CU_09
 }
 
 A1 --> CU_01

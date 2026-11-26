@@ -5,30 +5,40 @@ package rpgmanager.inventarioyequipamiento;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Personaje. Trazabilidad: RN-02. */
+/** Personaje. Trazabilidad: RF-01, RF-02, RF-03, RF-04, RF-05, RF-06, RF-07, RF-08, RF-09, RF-10. */
 public class Personaje {
+    private String codigo;
     private String nombre;
     private int nivel;
     private int ataqueBase;
     private int defensaBase;
-    private List<Inventario> inventarios = new ArrayList<>(); // asociacion ()
+    private int ataqueTotal;
+    private int defensaTotal;
+    private String armaEquipada;
+    private String armaduraEquipada;
+    private List<Inventario> inventarios = new ArrayList<>(); // asociacion: tiene ()
 
-    public Personaje(String nombre, int nivel, int ataqueBase, int defensaBase) {
+    public Personaje(String codigo, String nombre, int nivel, int ataqueBase, int defensaBase, int ataqueTotal, int defensaTotal, String armaEquipada, String armaduraEquipada) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.nivel = nivel;
         this.ataqueBase = ataqueBase;
         this.defensaBase = defensaBase;
+        this.ataqueTotal = ataqueTotal;
+        this.defensaTotal = defensaTotal;
+        this.armaEquipada = armaEquipada;
+        this.armaduraEquipada = armaduraEquipada;
     }
 
     // TODO: getters y setters (encapsulamiento)
 
-    /** equipar_arma (RN-02). */
-    public void equiparArma() {
-        throw new UnsupportedOperationException("TODO: implementar Personaje.equipar_arma");
+    /** calcular_ataque_total (RN-08). */
+    public void calcularAtaqueTotal() {
+        throw new UnsupportedOperationException("TODO: implementar Personaje.calcular_ataque_total");
     }
 
-    /** equipar_armadura (RN-02). */
-    public void equiparArmadura() {
-        throw new UnsupportedOperationException("TODO: implementar Personaje.equipar_armadura");
+    /** calcular_defensa_total (RN-08). */
+    public void calcularDefensaTotal() {
+        throw new UnsupportedOperationException("TODO: implementar Personaje.calcular_defensa_total");
     }
 }
