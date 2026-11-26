@@ -1,0 +1,54 @@
+
+
+
+
+1. RF-01 vs CU-01 (Agregar objeto al inventario)
+
+- Requerimiento (Imagen): "El jugador puede agregar al inventario un objeto que 
+  recogió en la aventura (historia RMIYE-11)."
+- Diagrama (CU-01): 
+  * Participantes: Jugador (P1), Inventario (P2), Personaje (P3).
+  * Flujo: P1 envía el objeto a P2, y P2 notifica a P3 la actualización del peso.
+
+
+- Lo que está bien: La relación entre actores y clases tiene total sentido lógico. 
+  Refleja correctamente la acción de agregar un ítem con sus atributos (tipo, 
+  nombre, peso, nivel_minimo) y la consecuencia directa en el estado del personaje 
+  (actualización de peso).
+- Puntos a mejorar / Auditar:
+  1. Falta confirmación al Jugador: El flujo termina en "Personaje", pero no hay un 
+     mensaje de retorno hacia el "Jugador" confirmando que el objeto se agregó con 
+     éxito.
+  2. Validaciones (Caminos alternativos): No se contemplan bloques `alt` (alternativos) 
+     en caso de que el objeto supere el peso máximo permitido o el jugador no cumpla 
+     con el `nivel_minimo=2`.
+
+
+2. RF-02 vs CU-02 (Listar objetos del inventario)
+
+- Requerimiento (Imagen): "El jugador puede listar los objetos de su inventario 
+  (historia RMIYE-2)."
+- Diagrama (CU-02):
+  * Participantes: Jugador (P1), Inventario (P2).
+  * Flujo: P1 solicita "Listar objetos" a P2, y P2 responde con el detalle de 
+    un objeto ("Espada...").
+
+- Lo que está bien: Es el diagrama más limpio y exacto respecto a su RF. Cumple 
+  directamente con la consulta y entrega la información detallada del inventario.
+- Puntos a mejorar / Auditar:
+  1. Sintaxis UML: La respuesta de P2 hacia P1 (`P2 -> P1`) debería usar una flecha 
+     punteada (`P2 --> P1`) para representar correctamente un mensaje de retorno en 
+     UML.
+  2. Caso borde: Podría incluirse una nota o alternativa para cuando el inventario 
+     está vacío.
+
+3. RF-03 vs CU-03 (Filtrar objetos del inventario)
+
+- Requerimiento (Imagen): "El jugador puede filtrar los objetos de su inventario 
+  por tipo, por texto en el nombre o por ambos criterios a la vez (historia RMIYE-6)."
+- Diagrama (CU-03):
+  * Participantes: Jugador (P1), Inventario (P2).
+  * Flujo: P1 filtra únicamente por tipo ("Filtrar objetos por tipo: Arma") y P2 
+    devuelve el resultado.
+
+

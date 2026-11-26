@@ -1,0 +1,16 @@
+RF-07: El diagrama maneja bien las condiciones de que el arma para ser equipada el jugador tiene 
+que tener el mismo nivel o mayor que el arma, tambien da las espeficaciones del objeto (en este
+caso el bono de ataque), pero creo que el diagrama falla a la hora de ver los caminos que genera
+el condicional, por ejemplo el diagrama no muestra el caso de: "si el nivel es menor, el objeto 
+no se equipa y el mensaje de error cita RN-02.".
+
+RF-08: El diagrama es muy parecido al de RF-07, generando que se vizualice mas como equipar un 
+objeto en vez de compararlo, no se observa en ningun caso la comparacion del objeto 1 con el 
+objeto 2 y no cumple la referencia ya que en ningun momento podemos ver el criterio de aceptacion
+llevado a cabo: "la comparación muestra el bono del objeto nuevo, el bono del objeto equipado y 
+la diferencia entre ambos; si no hay un objeto equipado del mismo tipo, el bono actual se muestra 
+como 0.".
+
+RF-09: El diagrama muestre de manera certera la referencia, al marcar el objeto con un booleano
+generando que cualquiera que vea el diagrama le quede claro el requerimento funcional, no le 
+cambiaria nada al diagrama.

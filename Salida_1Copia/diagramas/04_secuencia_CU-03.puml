@@ -1,0 +1,9 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-03 Filtrar objetos del inventario
+actor "Jugador" as P1
+participant "Inventario" as P2
+
+P1 -> P2 : Filtrar objetos por tipo: Arma
+P2 -> P1 : Resultado: Espada, tipo=Arma, peso=5, equipado=True, protegido=False
+@enduml

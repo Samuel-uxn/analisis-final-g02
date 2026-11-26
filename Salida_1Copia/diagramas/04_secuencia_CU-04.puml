@@ -1,0 +1,10 @@
+@startuml
+' Generado por spec2code. Es una PROPUESTA del pipeline: audítala contra la spec.
+title CU-04 Consultar capacidad disponible del inventario
+actor "Jugador" as P1
+participant "Inventario" as P2
+participant "Personaje" as P3
+
+P1 -> P2 : Consultar capacidad disponible
+P2 -> P3 : Capacidad máxima: 50, peso total: 10, capacidad disponible: 40
+@enduml

@@ -1,0 +1,40 @@
+Casos de uso: El diagrama incluye los nueve casos de uso del módulo de inventario,
+ aunque debería representar únicamente la funcionalidad de agregar objetos al inventario. 
+Además, en CU-05 deberia mostrar la relacion con CU-01n ni tampoco se evidencia la 
+condición que determina si el objeto puede agregarse o si debe rechazarse y 
+mantenerse el inventario sin cambios.
+
+Clases:El diagrama representa correctamente las clases principales del sistema 
+y utiliza herencia para diferenciar armas y armaduras de los demás objetos. 
+Sin embargo, es ambiguo ya que establece que un personaje puede tener varios inventarios. 
+Ademas de que no se especifica correctamente el tipo de elementos que almacena 
+la lista de objetos y no contempla cómo identificar cuáles están equipados. 
+Por último, el método equipar se encuentra en la clase Objeto, 
+aunque objetos de otro tipo no pueden guardarse.
+
+ER :El diagrama presenta algunas fallas, por ejemplo; debería almacenar 
+los objetos como registros independientes relacionados con el inventario. 
+Otro problema se esta en la representación de Arma y Armadura, ya que utiliza asociaciones 
+en lugar de establecer una estructura que permita representar su especialización de Objeto. 
+Además, falta detallar la llave primaria de Objeto ya que no se garantiza que los nombres sean únicos.
+Finalmente, no establece una relación entre Inventario y Objeto ni contempla cómo identificar
+los objetos que se encuentran equipados.
+
+
+
+RF-07: El diagrama maneja bien las condiciones de que el arma para ser equipada el jugador tiene 
+que tener el mismo nivel o mayor que el arma, tambien da las espeficaciones del objeto (en este
+caso el bono de ataque), pero creo que el diagrama falla a la hora de ver los caminos que genera
+el condicional, por ejemplo el diagrama no muestra el caso de: "si el nivel es menor, el objeto 
+no se equipa y el mensaje de error cita RN-02.".
+
+RF-08: El diagrama es muy parecido al de RF-07, generando que se vizualice mas como equipar un 
+objeto en vez de compararlo, no se observa en ningun caso la comparacion del objeto 1 con el 
+objeto 2 y no cumple la referencia ya que en ningun momento podemos ver el criterio de aceptacion
+llevado a cabo: "la comparación muestra el bono del objeto nuevo, el bono del objeto equipado y 
+la diferencia entre ambos; si no hay un objeto equipado del mismo tipo, el bono actual se muestra 
+como 0.".
+
+RF-09: El diagrama muestre de manera certera la referencia, al marcar el objeto con un booleano
+generando que cualquiera que vea el diagrama le quede claro el requerimento funcional, no le 
+cambiaria nada al diagrama.

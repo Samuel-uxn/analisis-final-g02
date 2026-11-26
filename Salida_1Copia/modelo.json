@@ -1,0 +1,523 @@
+{
+  "modulo": "Inventario y equipamiento",
+  "actores": [
+    {
+      "req_ids": [
+        "RF-01",
+        "RF-02",
+        "RF-03",
+        "RF-04",
+        "RF-05",
+        "RF-06",
+        "RF-07",
+        "RF-08",
+        "RF-09"
+      ],
+      "nombre": "Jugador",
+      "descripcion": ""
+    }
+  ],
+  "casos_uso": [
+    {
+      "req_ids": [
+        "RF-01"
+      ],
+      "id": "CU-01",
+      "nombre": "Agregar objeto al inventario",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador agrega un objeto a su inventario.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-02"
+      ],
+      "id": "CU-02",
+      "nombre": "Listar objetos del inventario",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador ve una lista de todos los objetos en su inventario.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-03"
+      ],
+      "id": "CU-03",
+      "nombre": "Filtrar objetos del inventario",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador filtra los objetos en su inventario por tipo, nombre o ambos.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-04"
+      ],
+      "id": "CU-04",
+      "nombre": "Consultar capacidad disponible del inventario",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador ve la capacidad disponible de su inventario.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-05"
+      ],
+      "id": "CU-05",
+      "nombre": "Avisar cuando el inventario está lleno",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador recibe un aviso cuando intenta agregar un objeto al inventario lleno.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-06"
+      ],
+      "id": "CU-06",
+      "nombre": "Descartar objeto del inventario",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador descarta un objeto de su inventario.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-07"
+      ],
+      "id": "CU-07",
+      "nombre": "Equipar arma o armadura",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador equipa una arma o armadura de su inventario.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-08"
+      ],
+      "id": "CU-08",
+      "nombre": "Comparar equipo con objeto nuevo",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador compara un arma o armadura de su inventario con el equipo que tiene equipado del mismo tipo.",
+      "incluye": [],
+      "extiende": []
+    },
+    {
+      "req_ids": [
+        "RF-09"
+      ],
+      "id": "CU-09",
+      "nombre": "Marcar y desmarcar objeto como protegido",
+      "actores": [
+        "Jugador"
+      ],
+      "descripcion": "El jugador marca o desmarca un objeto de su inventario como protegido.",
+      "incluye": [],
+      "extiende": []
+    }
+  ],
+  "entidades": [
+    {
+      "req_ids": [
+        "RN-02"
+      ],
+      "nombre": "Personaje",
+      "es_abstracta": false,
+      "hereda_de": null,
+      "atributos": [
+        {
+          "nombre": "nombre",
+          "tipo": "texto",
+          "es_clave": true
+        },
+        {
+          "nombre": "nivel",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "ataque_base",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "defensa_base",
+          "tipo": "entero",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RN-02"
+          ],
+          "nombre": "equipar_arma",
+          "descripcion": "",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RN-02"
+          ],
+          "nombre": "equipar_armadura",
+          "descripcion": "",
+          "retorno": "ninguno"
+        }
+      ]
+    },
+    {
+      "req_ids": [
+        "RN-01",
+        "RN-05"
+      ],
+      "nombre": "Objeto",
+      "es_abstracta": false,
+      "hereda_de": null,
+      "atributos": [
+        {
+          "nombre": "nombre",
+          "tipo": "texto",
+          "es_clave": true
+        },
+        {
+          "nombre": "peso",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "marca_protegido",
+          "tipo": "booleano",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RN-02"
+          ],
+          "nombre": "equipar",
+          "descripcion": "",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RN-05"
+          ],
+          "nombre": "descartar",
+          "descripcion": "",
+          "retorno": "ninguno"
+        }
+      ]
+    },
+    {
+      "req_ids": [
+        "RN-02"
+      ],
+      "nombre": "Arma",
+      "es_abstracta": false,
+      "hereda_de": "Objeto",
+      "atributos": [
+        {
+          "nombre": "bono_ataque",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "nivel_minimo",
+          "tipo": "entero",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RN-02"
+          ],
+          "nombre": "equipar",
+          "descripcion": "",
+          "retorno": "ninguno"
+        }
+      ]
+    },
+    {
+      "req_ids": [
+        "RN-02"
+      ],
+      "nombre": "Armadura",
+      "es_abstracta": false,
+      "hereda_de": "Objeto",
+      "atributos": [
+        {
+          "nombre": "bono_defensa",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "nivel_minimo",
+          "tipo": "entero",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RN-02"
+          ],
+          "nombre": "equipar",
+          "descripcion": "",
+          "retorno": "ninguno"
+        }
+      ]
+    },
+    {
+      "req_ids": [
+        "RN-01",
+        "RN-07"
+      ],
+      "nombre": "Inventario",
+      "es_abstracta": false,
+      "hereda_de": null,
+      "atributos": [
+        {
+          "nombre": "personaje",
+          "tipo": "entero",
+          "es_clave": true
+        },
+        {
+          "nombre": "capacidad_maxima",
+          "tipo": "entero",
+          "es_clave": false
+        },
+        {
+          "nombre": "objetos",
+          "tipo": "lista",
+          "es_clave": false
+        }
+      ],
+      "metodos": [
+        {
+          "req_ids": [
+            "RN-01"
+          ],
+          "nombre": "agregar_objeto",
+          "descripcion": "",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RN-07"
+          ],
+          "nombre": "listar_objetos",
+          "descripcion": "",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RN-07"
+          ],
+          "nombre": "filtrar_objetos",
+          "descripcion": "",
+          "retorno": "ninguno"
+        },
+        {
+          "req_ids": [
+            "RN-07"
+          ],
+          "nombre": "consultar_capacidad_disponible",
+          "descripcion": "",
+          "retorno": "ninguno"
+        }
+      ]
+    }
+  ],
+  "relaciones": [
+    {
+      "req_ids": [],
+      "desde": "Personaje",
+      "hasta": "Inventario",
+      "tipo": "asociacion",
+      "multiplicidad_desde": "1",
+      "multiplicidad_hasta": "*",
+      "etiqueta": ""
+    },
+    {
+      "req_ids": [],
+      "desde": "Objeto",
+      "hasta": "Arma",
+      "tipo": "asociacion",
+      "multiplicidad_desde": "0..*",
+      "multiplicidad_hasta": "1",
+      "etiqueta": ""
+    },
+    {
+      "req_ids": [],
+      "desde": "Objeto",
+      "hasta": "Armadura",
+      "tipo": "asociacion",
+      "multiplicidad_desde": "0..*",
+      "multiplicidad_hasta": "1",
+      "etiqueta": ""
+    }
+  ],
+  "secuencias": [
+    {
+      "req_ids": [],
+      "caso_uso": "CU-01",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Agregar objeto: Arma, nombre='Espada', peso=5, nivel_minimo=2"
+        },
+        {
+          "de": "Inventario",
+          "a": "Personaje",
+          "texto": "Peso total actualizado a 10"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-02",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Listar objetos"
+        },
+        {
+          "de": "Inventario",
+          "a": "Jugador",
+          "texto": "Objeto: Espada, tipo=Arma, peso=5, equipado=True, protegido=False"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-03",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Filtrar objetos por tipo: Arma"
+        },
+        {
+          "de": "Inventario",
+          "a": "Jugador",
+          "texto": "Resultado: Espada, tipo=Arma, peso=5, equipado=True, protegido=False"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-04",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Consultar capacidad disponible"
+        },
+        {
+          "de": "Inventario",
+          "a": "Personaje",
+          "texto": "Capacidad máxima: 50, peso total: 10, capacidad disponible: 40"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-05",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Agregar objeto: Armadura, nombre='Escudo', peso=10, nivel_minimo=2"
+        },
+        {
+          "de": "Inventario",
+          "a": "Jugador",
+          "texto": "Inventario lleno. Libere al menos 5 unidades de peso para agregar el objeto."
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-06",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Descartar objeto: Espada"
+        },
+        {
+          "de": "Inventario",
+          "a": "Personaje",
+          "texto": "Peso total actualizado a 0"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-07",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Equipar arma: Espada, bono_ataque=5, nivel_minimo=2"
+        },
+        {
+          "de": "Arma",
+          "a": "Personaje",
+          "texto": "Ataque total actualizado a 7"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-08",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Comparar equipo con objeto nuevo: Escudo, bono_defensa=5, nivel_minimo=2"
+        },
+        {
+          "de": "Armadura",
+          "a": "Personaje",
+          "texto": "Defensa total actualizado a 7"
+        }
+      ]
+    },
+    {
+      "req_ids": [],
+      "caso_uso": "CU-09",
+      "mensajes": [
+        {
+          "de": "Jugador",
+          "a": "Inventario",
+          "texto": "Marcar objeto como protegido: Espada, protegido=True"
+        }
+      ]
+    }
+  ]
+}
